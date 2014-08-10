@@ -7,6 +7,8 @@ var buildAlbumThumbnail = function() {
     +   '       <p>'
     +   '           <a class="album-name" href="/album.html"> Album Name </a>'
     +   '           <br/>'
+    +   '           <a href="/album.html"> Artist Name </a>'
+    +   '           <br/>'
     +   '           X songs'
     +   '           <br/>'
     +   '       </p>'
