@@ -2,13 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0e5bb35f-7203-4309-93a6-c3b35681c9c5" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/album.html" afterPath="$PROJECT_DIR$/public/album.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/scripts/album.js" afterPath="$PROJECT_DIR$/app/scripts/album.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/stylesheets/app.css.map" afterPath="$PROJECT_DIR$/public/stylesheets/app.css.map" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/stylesheets/app.css" afterPath="$PROJECT_DIR$/public/stylesheets/app.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/app.js.map" afterPath="$PROJECT_DIR$/public/javascripts/app.js.map" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/app.js" afterPath="$PROJECT_DIR$/public/javascripts/app.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/stylesheets/app.scss" afterPath="$PROJECT_DIR$/app/stylesheets/app.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/collection.html" afterPath="$PROJECT_DIR$/public/collection.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/scripts/collection.js" afterPath="$PROJECT_DIR$/app/scripts/collection.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="bloc-jams.iws" />
@@ -55,8 +55,8 @@
       <file leaf-file-name="album.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public/album.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-7.064516" vertical-offset="595" max-vertical-offset="1232">
-              <caret line="37" column="35" selection-start-line="37" selection-start-column="23" selection-end-line="37" selection-end-column="35" />
+            <state vertical-scroll-proportion="-11.32258" vertical-offset="1" max-vertical-offset="1254">
+              <caret line="16" column="7" selection-start-line="16" selection-start-column="7" selection-end-line="16" selection-end-column="7" />
               <folding />
             </state>
           </provider>
@@ -72,29 +72,31 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="album.js" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="album.js" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/scripts/album.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="66" max-vertical-offset="1144">
-              <caret line="48" column="29" selection-start-line="48" selection-start-column="29" selection-end-line="48" selection-end-column="29" />
+            <state vertical-scroll-proportion="1.0827339" vertical-offset="168" max-vertical-offset="1958">
+              <caret line="61" column="9" selection-start-line="61" selection-start-column="9" selection-end-line="61" selection-end-column="9" />
               <folding>
                 <element signature="e#37#408#0" expanded="false" />
                 <element signature="e#192#406#0" expanded="false" />
                 <element signature="e#455#893#0" expanded="false" />
                 <element signature="e#611#891#0" expanded="false" />
-                <element signature="e#959#1225#0" expanded="false" />
+                <element signature="e#2112#3057#0" expanded="false" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="collection.js" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="collection.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/scripts/collection.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.42530757" vertical-offset="330" max-vertical-offset="1144">
-              <caret line="45" column="42" selection-start-line="45" selection-start-column="42" selection-end-line="45" selection-end-column="42" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="418">
+              <caret line="60" column="32" selection-start-line="60" selection-start-column="32" selection-end-line="60" selection-end-column="32" />
               <folding>
                 <element signature="e#38#667#0" expanded="false" />
+                <element signature="e#713#1209#0" expanded="false" />
+                <element signature="e#1250#1767#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -113,8 +115,8 @@
       <file leaf-file-name="app.scss" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/stylesheets/app.scss">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-7.677966" vertical-offset="3287" max-vertical-offset="3872">
-              <caret line="170" column="1" selection-start-line="170" selection-start-column="1" selection-end-line="170" selection-end-column="1" />
+            <state vertical-scroll-proportion="-4.6949153" vertical-offset="4145" max-vertical-offset="4642">
+              <caret line="201" column="16" selection-start-line="201" selection-start-column="16" selection-end-line="201" selection-end-column="16" />
               <folding />
             </state>
           </provider>
@@ -137,17 +139,16 @@
         <option value="$PROJECT_DIR$/public/index.html" />
         <option value="$PROJECT_DIR$/app/scripts/landing.js" />
         <option value="$PROJECT_DIR$/app/scripts/app.js" />
-        <option value="$PROJECT_DIR$/public/album.html" />
-        <option value="$PROJECT_DIR$/app/scripts/album.js" />
         <option value="$PROJECT_DIR$/public/collection.html" />
-        <option value="$PROJECT_DIR$/app/stylesheets/app.scss" />
         <option value="$PROJECT_DIR$/app/scripts/collection.js" />
+        <option value="$PROJECT_DIR$/public/album.html" />
+        <option value="$PROJECT_DIR$/app/stylesheets/app.scss" />
+        <option value="$PROJECT_DIR$/app/scripts/album.js" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-8" />
-    <option name="y" value="-8" />
+    <option name="x" value="-2" />
     <option name="width" value="1382" />
     <option name="height" value="754" />
   </component>
@@ -319,7 +320,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="754" extended-state="6" />
+    <frame x="-2" y="0" width="1382" height="754" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -562,28 +563,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/album.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-7.064516" vertical-offset="595" max-vertical-offset="1232">
-          <caret line="37" column="35" selection-start-line="37" selection-start-column="23" selection-end-line="37" selection-end-column="35" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/scripts/album.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="66" max-vertical-offset="1144">
-          <caret line="48" column="29" selection-start-line="48" selection-start-column="29" selection-end-line="48" selection-end-column="29" />
-          <folding>
-            <element signature="e#37#408#0" expanded="false" />
-            <element signature="e#192#406#0" expanded="false" />
-            <element signature="e#455#893#0" expanded="false" />
-            <element signature="e#611#891#0" expanded="false" />
-            <element signature="e#959#1225#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/collection.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-4.967742" vertical-offset="0" max-vertical-offset="924">
@@ -592,20 +571,44 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/stylesheets/app.scss">
+    <entry file="file://$PROJECT_DIR$/app/scripts/collection.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-7.677966" vertical-offset="3287" max-vertical-offset="3872">
-          <caret line="170" column="1" selection-start-line="170" selection-start-column="1" selection-end-line="170" selection-end-column="1" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="418">
+          <caret line="60" column="32" selection-start-line="60" selection-start-column="32" selection-end-line="60" selection-end-column="32" />
+          <folding>
+            <element signature="e#38#667#0" expanded="false" />
+            <element signature="e#713#1209#0" expanded="false" />
+            <element signature="e#1250#1767#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/album.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-11.32258" vertical-offset="1" max-vertical-offset="1254">
+          <caret line="16" column="7" selection-start-line="16" selection-start-column="7" selection-end-line="16" selection-end-column="7" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/scripts/collection.js">
+    <entry file="file://$PROJECT_DIR$/app/stylesheets/app.scss">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.42530757" vertical-offset="330" max-vertical-offset="1144">
-          <caret line="45" column="42" selection-start-line="45" selection-start-column="42" selection-end-line="45" selection-end-column="42" />
+        <state vertical-scroll-proportion="-4.6949153" vertical-offset="4145" max-vertical-offset="4642">
+          <caret line="201" column="16" selection-start-line="201" selection-start-column="16" selection-end-line="201" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/scripts/album.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="1.0827339" vertical-offset="168" max-vertical-offset="1958">
+          <caret line="61" column="9" selection-start-line="61" selection-start-column="9" selection-end-line="61" selection-end-column="9" />
           <folding>
-            <element signature="e#38#667#0" expanded="false" />
+            <element signature="e#37#408#0" expanded="false" />
+            <element signature="e#192#406#0" expanded="false" />
+            <element signature="e#455#893#0" expanded="false" />
+            <element signature="e#611#891#0" expanded="false" />
+            <element signature="e#2112#3057#0" expanded="false" />
           </folding>
         </state>
       </provider>
