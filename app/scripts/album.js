@@ -33,14 +33,13 @@ var albumMarconi = {
 
 var currentlyPlayingSong = null;
 
-var createSongRow = function(songNumber, songName, songLength) {
+var createSongRow = function (songNumber, songName, songLength) {
     var template =
         '<tr>'
         +   '   <td class="song-number col-md-1" data-song-number="' + songNumber + '">' + songNumber + '</td>'
         +   '   <td class="col-md-9">' + songName + '</td>'
         +   '   <td class="col-md-2">' + songLength + '</td>'
-        +   '</tr>'
-    ;
+        +   '</tr>';
 
     // Instead of returning the row immediately, we'll attach hover
     // functionality to it first.
