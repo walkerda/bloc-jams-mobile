@@ -60,7 +60,8 @@ var updateCollectionView = function() {
 
 if (document.URL.match(/\/collection.html/)) {
     //Wait until the HTML is fully processed.
-    $(document).ready(function() {
-        updateCollectionView();
-    });
-}
+    console.log("DOM is not ready...");
+    // code may not work here
+    //updateCollectionView();
+    $(document).ready(updateCollectionView);
+};
