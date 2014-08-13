@@ -2,6 +2,8 @@
 @import "album";
 @import "collection";
 @import "player_bar";
+@import "profile";
+@import "buttons";
 
 /* define the mixin */
 @mixin radial-gradient($first_color, $second_color) {
