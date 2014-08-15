@@ -274,7 +274,26 @@ function shuffle(o) {
     return o;
 };
 
-angular.module('BlocJams', []).controller('Landing.controller', ['$scope', function($scope) {
+blocJams = angular.module('BlocJams', ['ui.router']);
+
+blocJams.config(['$stateProvider', '$locationProvider', function($stateProvider, $locationProvider) {
+    $locationProvider.html5Mode(true);
+
+    $stateProvider
+        .state('landing', {
+            url: '/',
+            controller: 'Landing.controller',
+            templateUrl: '/templates/landing.html'
+        })
+
+        .state('song', {
+            url: '/song',
+            templateUrl: '/templates/song.html'
+        })
+}]);
+
+// This is a cleaner way to call the controller than crowding it on the module definition.
+blocJams.controller('Landing.controller', ['$scope', function($scope) {
     $scope.headingText = "Bloc Jams";
     $scope.headingTextClicked = function () {
         shuffle($scope.albumURLs);
