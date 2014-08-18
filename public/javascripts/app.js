@@ -320,7 +320,7 @@ blocJams.config(['$stateProvider', '$locationProvider', function($stateProvider,
 }]);
 
 // This is a cleaner way to call the controller than crowding it on the module definition.
-blocJams.controller('Landing.controller', ['$scope', 'Console.Logger', function($scope) {
+blocJams.controller('Landing.controller', ['$scope', function($scope) {
     $scope.headingText = "Bloc Jams";
     $scope.headingTextClicked = function () {
         shuffle($scope.albumURLs);
@@ -344,14 +344,14 @@ blocJams.controller('Landing.controller', ['$scope', 'Console.Logger', function(
     ];
 }]);
 
-blocJams.controller('Collection.controller', ['$scope', 'ConsoleLogger', function($scope) {
+blocJams.controller('Collection.controller', ['$scope', function($scope) {
     $scope.albums = [];
     for (var i = 0; i < 33; i++) {
         $scope.albums.push(angular.copy(albumPicasso));
     }
 }]);
 
-blocJams.controller('Album.controller', ['$scope', 'SongPlayer', 'ConsoleLogger', function($scope, SongPlayer) {
+blocJams.controller('Album.controller', ['$scope', 'SongPlayer', function($scope, SongPlayer) {
     $scope.album = angular.copy(albumPicasso);
 
     var hoveredSong = null;
@@ -386,9 +386,8 @@ blocJams.controller('Album.controller', ['$scope', 'SongPlayer', 'ConsoleLogger'
         SongPlayer.pause();
     };
 
-    $scope.consoleLogger = function() {
-        ConsoleLogger.logM();
-    };
+    //$scope.consoleLogger = ConsoleLogger;
+
 }]);
 
 blocJams.controller('PlayerBar.controller', ['$scope', 'SongPlayer', function($scope, SongPlayer) {
@@ -396,7 +395,11 @@ blocJams.controller('PlayerBar.controller', ['$scope', 'SongPlayer', function($s
 }]);
 
 blocJams.service('SongPlayer', function() {
-   return {
+    var trackIndex = function(album, song) {
+        return album.songs.indexOf(song);
+    };
+
+    return {
        currentSong: null,
        currentAlbum: null,
        playing: false,
@@ -407,6 +410,26 @@ blocJams.service('SongPlayer', function() {
        pause: function() {
            this.playing = false;
        },
+       next: function() {
+           var currentTrackIndex = trackIndex(this.currentAlbum, this.currentSong);
+           currentTrackIndex++;
+           if (currentTrackIndex >= this.currentAlbum.songs.length) {
+               //currentTrackIndex = 0;
+               this.playing = false;
+               this.currentSong = null;
+           }
+           this.currentSong = this.currentAlbum.songs[currentTrackIndex];
+       },
+       previous: function() {
+           var currentTrackIndex = trackIndex(this.currentAlbum, this.currentSong);
+           currentTrackIndex--;
+           if (currentTrackIndex < 0) {
+               //currentTrackIndex = this.currentAlbum.songs.length - 1;
+               this.playing = false;
+               this.currentSong = null;
+           }
+           this.currentSong = this.currentAlbum.songs[currentTrackIndex];
+       },
        setSong: function(album, song) {
            this.currentAlbum = album;
            this.currentSong = song;
@@ -414,13 +437,14 @@ blocJams.service('SongPlayer', function() {
    };
 });
 
-blocJams.service('ConsoleLogger', function() {
-    return {
-        logM: function() {
-            console.log("Hello World!");
-        }
-    };
-});
+
+//blocJams.service('ConsoleLogger', function() {
+//    return {
+//        log: function() {
+//            console.log("Hello World!");
+//        }
+//    };
+//});
 
 
 });
