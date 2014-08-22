@@ -131,6 +131,8 @@ td.song-number {
     color: white;
     cursor: pointer;
     text-decoration: none; }
+  .player-bar a:disabled {
+    color: pink; }
   .player-bar .container {
     display: table;
     padding: 0;
@@ -219,9 +221,9 @@ td.song-number {
     border-radius: 50%;
     cursor: pointer;
     transition: all 100ms ease-in-out; }
-  .slider.no-animate .fill, .slider.no-animate .thumb {
+  .slider.active .fill, .slider.active .thumb {
     transition: none; }
-  .slider:hover .thumb {
+  .slider:hover .thumb, .slider:active .thumb {
     width: 20px;
     height: 20px;
     margin-top: -10px;

@@ -8,9 +8,13 @@
   z-index: 100;
 
   a, a:hover {
-    color: white;
+    color: #FFFFFF;
     cursor: pointer;
     text-decoration: none;
+  }
+
+  a:disabled {
+    color: pink;
   }
 
   .container {
@@ -43,6 +47,7 @@
       margin-right: 60px;
       font-size: 30px
     }
+
   }
 
   .currently-playing {
@@ -141,13 +146,13 @@
     transition: all 100ms ease-in-out;
   }
 
-  &.no-animate {
+  &.active {
     .fill, .thumb {
       transition: none;
     }
   }
 
-  &:hover .thumb {
+  &:hover .thumb, &:active .thumb {
     width: 20px;
     height: 20px;
     margin-top: -10px;

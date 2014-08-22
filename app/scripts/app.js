@@ -88,7 +88,7 @@ blocJams.controller('Collection.controller', ['$scope', 'SongPlayer', function($
     }
 }]);
 
-blocJams.controller('Album.controller', ['$scope', 'SongPlayer', function($scope, SongPlayer) {
+blocJams.controller('Album.controller', ['$scope', 'SongPlayer', 'ConsoleLogger', function($scope, SongPlayer, ConsoleLogger) {
     $scope.album = angular.copy(albumPicasso);
 
     var hoveredSong = null;
@@ -121,9 +121,9 @@ blocJams.controller('Album.controller', ['$scope', 'SongPlayer', function($scope
 
     $scope.pauseSong = function(song) {
         SongPlayer.pause();
+        ConsoleLogger.log();
     };
 
-    //$scope.consoleLogger = ConsoleLogger;
 
 }]);
 
@@ -141,6 +141,7 @@ blocJams.service('SongPlayer', function() {
        currentSong: null,
        currentAlbum: null,
        playing: false,
+       atEnd: false,
 
        play: function() {
            this.playing = true;
@@ -150,25 +151,33 @@ blocJams.service('SongPlayer', function() {
            this.playing = false;
            currentSoundFile.pause();
        },
+       stop: function() {
+           this.playing = false;
+           currentSoundFile.stop();
+       },
        next: function() {
            var currentTrackIndex = trackIndex(this.currentAlbum, this.currentSong);
-           currentTrackIndex++;
-           if (currentTrackIndex >= this.currentAlbum.songs.length) {
-               //currentTrackIndex = 0;
+           this.atEnd = currentTrackIndex >= this.currentAlbum.songs.length;
+           if (this.atEnd) {
+               currentTrackIndex--;
                this.playing = false;
                this.currentSong = null;
+               return;
            }
+           currentTrackIndex++;
            var song = this.currentAlbum.songs[currentTrackIndex];
            this.setSong(this.currentAlbum, song);
        },
        previous: function() {
            var currentTrackIndex = trackIndex(this.currentAlbum, this.currentSong);
-           currentTrackIndex--;
-           if (currentTrackIndex < 0) {
+           this.atEnd = currentTrackIndex <= this.currentAlbum.songs.length - 1;
+           if (this.atEnd) {
                //currentTrackIndex = this.currentAlbum.songs.length - 1;
                this.playing = false;
                this.currentSong = null;
+               return;
            }
+           currentTrackIndex++;
            var song = this.currentAlbum.songs[currentTrackIndex];
            this.setSong(this.currentAlbum, song);
        },
@@ -189,56 +198,72 @@ blocJams.service('SongPlayer', function() {
 });
 
 
-//blocJams.service('ConsoleLogger', function() {
-//    return {
-//        log: function() {
-//            console.log("Hello World!");
-//        }
-//    };
-//});
+blocJams.service('ConsoleLogger', function() {
+    return {
+        log: function() {
+            console.log("Hello World!");
+        }
+    };
+});
 
-blocJams.directive('slider', function() {
-    var updateSeekPercentage = function($seekBar, event) {
-        var barWidth = $seekBar.width();
-        var offsetX =  event.pageX - $seekBar.offset().left;
+blocJams.directive('slider', ['$document', function() {
 
-        var offsetXPercent = (offsetX  / $seekBar.width()) * 100;
+    // Returns a number between 0 and 1 to determine where the mouse event happened along the slider bar.
+    var calculateSliderPercentFromMouseEvent = function($slider, event) {
+        var offsetX = event.pageX - $slider.offset().left; // distance from left
+        var sliderWidth = $slider.width(); // width of slider
+        var offsetXPercent = (offsetX / sliderWidth);
         offsetXPercent = Math.max(0, offsetXPercent);
-        offsetXPercent = Math.min(100, offsetXPercent);
-
-        var percentageString = offsetXPercent + '%';
-        $seekBar.find('.fill').width(percentageString);
-        $seekBar.find('.thumb').css({left: percentageString});
+        offsetXPercent = Math.min(1, offsetXPercent);
+        return offsetXPercent;
     }
 
     return {
         templateUrl: '/templates/directives/slider.html',
         replace: true,
         restrict: 'E',
+        scope: {},
         link: function(scope, element, attributes) {
-
+            // These values represent the progress into the song/volume bar, and its max value
+            // For now, we're supplying arbitrary initial max values
+            scope.value = 0;
+            scope.max = 200;
             var $seekBar = $(element);
 
-            $seekBar.click(function(event) {
-                updateSeekPercentage($seekBar, event);
-            });
+            var percentString = function() {
+                percent = Number(scope.value) / Number(scope.max) * 100;
+                return percent + "%";
+            };
 
-            $seekBar.find('.thumb').mousedown(function(event){
-                $seekBar.addClass('no-animate');
+            scope.fillStyle = function() {
+                return {width: percentString()};
+            };
 
-                $(document).bind('mousemove.thumb', function(event){
-                    updateSeekPercentage($seekBar, event);
+            scope.thumbStyle = function() {
+                return {left: percentString()};
+            };
+
+            scope.onClickSlider = function(event) {
+                var percent = calculateSliderPercentFromMouseEvent($seekBar, event);
+                scope.value = percent * scope.max;
+            };
+
+            scope.trackThumb = function() {
+                $document.bind('mousemove.thumb', function(event) {
+                    var percent = calculateSliderPercentFromMouseEvent($seekBar, event);
+                    scope.$apply(function() {
+                        scope.value = percent * scope.max;
+                    });
                 });
 
                 //cleanup
-                $(document).bind('mouseup.thumb', function(){
-                    $seekBar.removeClass('no-animate');
-                    $(document).unbind('mousemove.thumb');
-                    $(document).unbind('mouseup.thumb');
+                $document.bind('mouseup.thumb', function() {
+                    $document.unbind('mousemove.thumb');
+                    $document.unbind('mouseup.thumb');
                 });
+            };
 
-            });
         }
     };
-});
+}]);
 
