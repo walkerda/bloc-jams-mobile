@@ -175,7 +175,7 @@ td.song-number {
   .player-bar .volume {
     display: inline-block; }
     .player-bar .volume i {
-      width: 40px;
+      width: 20px;
       font-size: 20px;
       display: inline-block;
       vertical-align: middle; }
@@ -195,7 +195,7 @@ td.song-number {
     top: 10px; }
   .slider .total-time {
     position: absolute;
-    right: 0;
+    right: auto;
     top: 10px; }
 
 .slider {
