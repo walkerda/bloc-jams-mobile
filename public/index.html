@@ -2,11 +2,14 @@
 <html data-ng-app="BlocJams">
 <head>
     <title>Bloc Jams</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
     <link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/3.17.1/build/cssreset/cssreset-min.css">
-    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <!--<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="/stylesheets/app.css">
     <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,800,600,700,300" rel='stylesheet' type='text/css'>
     <link href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
     <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.15/angular.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.10/angular-ui-router.min.js"></script>
@@ -19,24 +22,33 @@
 
 <body>
 
-    <nav class='player-header-nav navbar'>
-        <div class="container">
+    <nav class='player-header-nav navbar navbar-default' role="navigation">
+        <div class="container-fluid">
             <div class="navbar-header"><!-- Nav Bar -->
-                <a ui-sref="'landing" class="logo navbar-left">
-                    <img src="/images/blocjams.png">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                        data-target=".nav-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="glyphicon glyphicon-chevron-down"></span>
+                </button>
+                <a ui-sref="landing" class="navbar-brand">
+                    <img src="/images/blocjams.png" class="img-responsive img-rounded">
                 </a>
             </div>
         </div>
-        <ul class="nav navbar-nav navbar-right">
-            <li><a ui-sref="landing">Home</a></li>
-            <li><a ui-sref="collection">Library</a></li>
-            <li><a ui-sref="song">Song</a></li>
-            <li><a ui-sref="album">Album</a></li>
-        </ul>
+        <div class="navbar-collapse collapse nav-collapse" >
+            <ul class="nav navbar-nav navbar-right">
+                <li><a ui-sref="landing">Home</a></li>
+                <li><a ui-sref="collection">Library</a></li>
+                <li><a ui-sref="song">Song</a></li>
+                <li><a ui-sref="album">Album</a></li>
+            </ul>
+        </div>
     </nav>
 
     <!-- Render templates here -->
     <div ui-view></div>
+
+    <footer></footer>
 
 </body>
 </html>

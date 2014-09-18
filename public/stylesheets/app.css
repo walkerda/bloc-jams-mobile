@@ -1,25 +1,53 @@
-.hero-content {
-  background: #2f1d57;
-  padding: 100px 0; }
-  .hero-content h1 {
-    font-size: 70px;
-    margin-bottom: 50px;
-    font-weight: 300; }
+@media only screen and (max-width: 768px) {
+  .hero-content {
+    background: #2f1d57;
+    padding: 20px 0; }
+    .hero-content h1, .hero-content h3 {
+      text-align: center; }
+  .selling-points {
+    padding: 0; }
+    .selling-points .point {
+      width: auto;
+      padding: 3em 0.75em; }
+      .selling-points .point h5 {
+        font-size: 1.5em;
+        font-weight: bold;
+        text-align: center;
+        height: 2.25em; }
+      .selling-points .point p {
+        font-size: 1.25em;
+        text-align: center; }
+  footer {
+    background-color: rgba(123, 70, 163, 0.9);
+    height: 50px;
+    margin-top: 10px; } }
 
-.selling-points {
-  padding: 100px 0; }
-  .selling-points .point {
-    width: 32%;
-    float: left;
-    padding: 0 0.5%; }
-    .selling-points .point h5 {
-      font-size: 24px;
-      font-weight: bold;
-      margin-bottom: 20px;
-      text-align: center;
-      height: 85px; }
-    .selling-points .point p {
-      font-size: 14px; }
+@media only screen and (min-width: 1024px) {
+  .hero-content {
+    background: #2f1d57;
+    padding: 100px 0; }
+    .hero-content h1 {
+      font-size: 70px;
+      margin-bottom: 50px;
+      font-weight: 300; }
+  .selling-points {
+    padding: 100px 0; }
+    .selling-points .point {
+      width: 32%;
+      padding: 0 0.5%; }
+      .selling-points .point h5 {
+        font-size: 24px;
+        font-weight: bold;
+        margin-bottom: 20px;
+        text-align: center;
+        height: 85px; }
+      .selling-points .point p {
+        font-size: 14px;
+        text-align: center; }
+  footer {
+    background-color: rgba(123, 70, 163, 0.9);
+    height: 50px;
+    margin-top: 10px; } }
 
 .album-header-container {
   margin-top: 55px;
@@ -303,8 +331,6 @@ td.song-number {
     background-color: #b3b3b3;
     cursor: not-allowed; }
 
-/* define the mixin */
-/* end mixin */
 html {
   height: 100%; }
 
@@ -314,26 +340,54 @@ body {
   min-height: 100%;
   background: -webkit-radial-gradient(#2b1339, #380c77);
   background: radial-gradient(#2b1339, #380c77);
-  padding-bottom: 150px; }
-
-body.landing {
-  background: #5b5579;
   padding-bottom: 0; }
-
-body.landing .navbar {
-  margin-bottom: 0; }
 
 .player-header-nav {
   background-color: rgba(123, 70, 163, 0.9); }
-  .player-header-nav .navbar-nav a {
-    line-height: 45px;
+  .player-header-nav .navbar-nav li {
+    text-align: center; }
+
+.navbar-default {
+  border: none;
+  height: 100px; }
+
+.navbar-default .navbar-header .navbar-toggle {
+  background-color: rgba(123, 70, 163, 0.9);
+  border-color: white; }
+  .navbar-default .navbar-header .navbar-toggle:hover {
+    background-color: white; }
+    .navbar-default .navbar-header .navbar-toggle:hover .glyphicon-chevron-down {
+      color: rgba(123, 70, 163, 0.9); }
+  .navbar-default .navbar-header .navbar-toggle .glyphicon-chevron-down {
+    color: white; }
+
+@media only screen and (min-width: 1024px) {
+  body {
+    font-family: 'Open Sans';
+    color: white;
+    min-height: 100%;
+    background: -webkit-radial-gradient(#2b1339, #380c77);
+    background: radial-gradient(#2b1339, #380c77);
+    padding-bottom: 150px; }
+  body.landing {
+    background: #5b5579;
+    padding-bottom: 0; }
+  body.landing .navbar {
+    margin-bottom: 10px; }
+  .player-header-nav {
+    background-color: rgba(123, 70, 163, 0.9); }
+  .navbar-default {
+    border: none; }
+  .navbar-default .navbar-collapse .navbar-nav a {
+    line-height: 20px;
     color: white;
     text-transform: uppercase;
     font-weight: 700;
     letter-spacing: 1.2;
     margin-right: 20px; }
-    .player-header-nav .navbar-nav a:hover {
-      color: rgba(123, 70, 163, 0.9); }
+    .navbar-default .navbar-collapse .navbar-nav a:hover {
+      color: rgba(123, 70, 163, 0.9);
+      background-color: white; } }
 
 
 /*# sourceMappingURL=app.css.map*/
