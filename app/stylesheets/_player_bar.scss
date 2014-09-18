@@ -1,162 +1,333 @@
-.player-bar {
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: 150px;
-  background: rgba(255, 255, 255, 0.3);
-  z-index: 100;
+@import "variables";
 
-  a, a:hover {
-    color: #FFFFFF;
-    cursor: pointer;
-    text-decoration: none;
-  }
+@media only screen and (max-width: 768px) {
+  .player-bar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 150px;
+    background: $playerBarBC;
+    z-index: 100;
+    padding-top: 15px;
 
-  a:disabled {
-    color: pink;
-  }
-
-  .container {
-    display: table;
-    padding: 0;
-    min-height: 100%;
-  }
-
-  .left-controls {
-    width: 25%;
-    text-align: left;
-  }
-
-  .right-controls {
-    width: 25%;
-    text-align: right;
-  }
-
-  .play-controls {
     a {
-      font-size: 20px;
-      vertical-align: middle;
+      color: #FFFFFF;
+      text-decoration: none;
     }
 
-    .previous {
-      margin-right: 65px;
+    a:disabled {
+      color: pink;
     }
 
-    .play-pause {
-      margin-right: 60px;
-      font-size: 30px
+    .container {
+      display: table;
+      padding: 0;
+      min-height: 100%;
     }
 
+    .left-controls {
+      display: table-row;
+      width: 100%;
+      text-align: center;
+    }
+
+    .right-controls {
+      visibility: hidden;
+    }
+
+    .play-controls {
+      a {
+        font-size: 1.5em;
+        vertical-align: middle;
+      }
+
+      .previous {
+        margin-right: 65px;
+      }
+
+      .play-pause {
+        margin-right: 60px;
+        font-size: 1.875em;
+      }
+
+    }
+
+    .currently-playing {
+      display: table-row;
+      width: 100%;
+      text-align: center;
+      position: relative;
+
+      .song-name, .artist-name {
+        text-align: center;
+        margin: 0;
+        position: relative;
+        width: 100%;
+        font-size: 1.1em;
+        font-weight: 300;
+      }
+      .song-name {
+        bottom: 0px;
+      }
+      .artist-name {
+        bottom: -5px;
+      }
+    }
+
+    .queue-toggle {
+      visibility: hidden;
+      display: inline-block;
+      margin-left: 75px;
+
+      i {
+        font-size: 20px;
+      }
+    }
+
+    .volume {
+      visibility: hidden;
+      display: inline-block;
+
+      i {
+        width: 20px;
+        font-size: 20px;
+        display: inline-block;
+        vertical-align: middle;
+      }
+
+      .slider {
+        display: inline-block;
+        width: 100px;
+        vertical-align: middle;
+      }
+    }
   }
 
-  .currently-playing {
-    width: 50%;
-    text-align: center;
+  .player-bar-control-group {
+    display: table-cell;
+    vertical-align: middle;
+  }
+
+  .seek-control {
     position: relative;
 
-    .song-name, .artist-name {
-      text-align: center;
-      font-size: 12px;
-      margin: 0;
+    .current-time {
       position: absolute;
-      width: 100%;
-      font-size: 16px;
-      font-weight: 300;
+      top: 10px;
     }
-    .song-name {
-      top: 20px;
-    }
-    .artist-name {
-      bottom: 20px;
+    .total-time {
+      position: absolute;
+      right: 0px;
+      top: 10px;
     }
   }
 
-  .queue-toggle {
-    display: inline-block;
-    margin-left: 75px;
-
-    i {
-      font-size: 20px;
-    }
-  }
-
-  .volume {
-    display: inline-block;
-
-    i {
-      width: 20px;
-      font-size: 20px;
-      display: inline-block;
-      vertical-align: middle;
-    }
-
-    .slider {
-      display: inline-block;
-      width: 100px;
-      vertical-align: middle;
-    }
-  }
-}
-
-.player-bar-control-group {
-  display: table-cell;
-  vertical-align: middle;
-}
-
-.slider {
-  position: relative;
-
-  .current-time {
-    position: absolute;
-    top: 10px;
-  }
-  .total-time {
-    position: absolute;
-    right: auto;
-    top: 10px;
-  }
-}
-
-.slider {
-  height: 5px;
-  background: rgba(255, 255, 255, 0.3);
-  border-radius: 2px;
-  position: relative;
-  cursor: pointer;
-
-  .fill {
-    background: white;
-    width: 36%;
+  .slider {
     height: 5px;
+    background: rgba(255, 255, 255, 0.3);
     border-radius: 2px;
-  }
-
-  .thumb {
-    position: absolute;
-    height: 10px;
-    width: 10px;
-    background: white;
-    left: 36%;
-    margin-left: -5px;
-    top: 50%;
-    margin-top: -5px;
-    border-radius: 50%;
+    position: relative;
     cursor: pointer;
-    transition: all 100ms ease-in-out;
-  }
 
-  &.active {
-    .fill, .thumb {
-      transition: none;
+    .fill {
+      background: white;
+      width: 36%;
+      height: 5px;
+      border-radius: 2px;
+    }
+
+    .thumb {
+      position: absolute;
+      height: 10px;
+      width: 10px;
+      background: white;
+      left: 36%;
+      margin-left: -5px;
+      top: 50%;
+      margin-top: -5px;
+      border-radius: 50%;
+      cursor: pointer;
+      transition: all 100ms ease-in-out;
+    }
+
+    &.active {
+      .fill, .thumb {
+        transition: none;
+      }
+    }
+
+    &:hover .thumb, &:active .thumb {
+      width: 20px;
+      height: 20px;
+      margin-top: -10px;
+      margin-left: -10px;
+    }
+
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  .player-bar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 150px;
+    background: rgba(255, 255, 255, 0.3);
+    z-index: 100;
+
+    a, a:hover {
+      color: #FFFFFF;
+      cursor: pointer;
+      text-decoration: none;
+    }
+
+    a:disabled {
+      color: pink;
+    }
+
+    .container {
+      display: table;
+      padding: 0;
+      min-height: 100%;
+    }
+
+    .left-controls {
+      width: 25%;
+      text-align: left;
+    }
+
+    .right-controls {
+      width: 25%;
+      text-align: right;
+    }
+
+    .play-controls {
+      a {
+        font-size: 20px;
+        vertical-align: middle;
+      }
+
+      .previous {
+        margin-right: 65px;
+      }
+
+      .play-pause {
+        margin-right: 60px;
+        font-size: 30px
+      }
+
+    }
+
+    .currently-playing {
+      width: 50%;
+      text-align: center;
+      position: relative;
+
+      .song-name, .artist-name {
+        text-align: center;
+        margin: 0;
+        position: absolute;
+        width: 100%;
+        font-size: 16px;
+        font-weight: 300;
+      }
+      .song-name {
+        top: 20px;
+      }
+      .artist-name {
+        bottom: 20px;
+      }
+    }
+
+    .queue-toggle {
+      display: inline-block;
+      margin-left: 75px;
+
+      i {
+        font-size: 20px;
+      }
+    }
+
+    .volume {
+      display: inline-block;
+
+      i {
+        width: 20px;
+        font-size: 20px;
+        display: inline-block;
+        vertical-align: middle;
+      }
+
+      .slider {
+        display: inline-block;
+        width: 100px;
+        vertical-align: middle;
+      }
     }
   }
 
-  &:hover .thumb, &:active .thumb {
-    width: 20px;
-    height: 20px;
-    margin-top: -10px;
-    margin-left: -10px;
+  .player-bar-control-group {
+    display: table-cell;
+    vertical-align: middle;
   }
 
+  .seek-control {
+    position: relative;
+
+    .current-time {
+      position: absolute;
+      top: 10px;
+    }
+    .total-time {
+      position: absolute;
+      right: 0px;
+      top: 10px;
+    }
+  }
+
+  .slider {
+    height: 5px;
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 2px;
+    position: relative;
+    cursor: pointer;
+
+    .fill {
+      background: white;
+      width: 36%;
+      height: 5px;
+      border-radius: 2px;
+    }
+
+    .thumb {
+      position: absolute;
+      height: 10px;
+      width: 10px;
+      background: white;
+      left: 36%;
+      margin-left: -5px;
+      top: 50%;
+      margin-top: -5px;
+      border-radius: 50%;
+      cursor: pointer;
+      transition: all 100ms ease-in-out;
+    }
+
+    &.active {
+      .fill, .thumb {
+        transition: none;
+      }
+    }
+
+    &:hover .thumb, &:active .thumb {
+      width: 20px;
+      height: 20px;
+      margin-top: -10px;
+      margin-left: -10px;
+    }
+
+  }
 }
+
