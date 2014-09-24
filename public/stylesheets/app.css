@@ -258,6 +258,9 @@
     visibility: hidden; } }
 
 @media only screen and (max-width: 768px) {
+  .col-md-4 {
+    margin-left: 20px;
+    margin-right: 20px; }
   .player-bar {
     position: fixed;
     bottom: 0;
@@ -277,6 +280,8 @@
       min-height: 100%; }
     .player-bar .left-controls {
       text-align: center; }
+    .player-bar .right-controls {
+      visibility: hidden; }
     .player-bar .play-controls a {
       font-size: 1.5em; }
     .player-bar .play-controls .previous {
@@ -284,12 +289,10 @@
     .player-bar .play-controls .play-pause {
       margin-right: 45px;
       font-size: 1.875em; }
-    .player-bar .currently-playing {
-      text-align: center; }
-      .player-bar .currently-playing .song-name, .player-bar .currently-playing .artist-name {
-        text-align: center;
-        font-size: 1.1em;
-        font-weight: 300; }
+    .player-bar .currently-playing .song-name, .player-bar .currently-playing .artist-name {
+      text-align: center;
+      font-size: 1.1em;
+      font-weight: 300; }
     .player-bar .queue-toggle {
       visibility: hidden;
       display: inline-block;
@@ -307,9 +310,6 @@
         display: inline-block;
         width: 100px;
         vertical-align: middle; }
-  .player-bar-control-group {
-    display: table-cell;
-    vertical-align: middle; }
   .seek-control {
     position: relative; }
     .seek-control .current-time {
@@ -351,6 +351,8 @@
       margin-left: -10px; } }
 
 @media only screen and (min-width: 768px) {
+  .col-md-4 {
+    margin-top: 75px; }
   .player-bar {
     position: fixed;
     bottom: 0;
@@ -374,8 +376,7 @@
       text-align: left; }
     .player-bar .right-controls {
       width: 25%;
-      text-align: right;
-      vertical-align: middle; }
+      text-align: right; }
     .player-bar .play-controls a {
       font-size: 20px;
       vertical-align: middle; }
