@@ -21,57 +21,56 @@
     }
 
     .container {
-      display: table;
+      //display: table;
       padding: 0;
       min-height: 100%;
     }
 
     .left-controls {
-      display: table-row;
-      width: 100%;
+      //display: table-row;
+      //width: 100%;
       text-align: center;
     }
 
     .right-controls {
-      visibility: hidden;
+      //visibility: hidden;
     }
 
     .play-controls {
       a {
         font-size: 1.5em;
-        vertical-align: middle;
       }
 
       .previous {
-        margin-right: 65px;
+        margin-right: 45px;
       }
 
       .play-pause {
-        margin-right: 60px;
+        margin-right: 45px;
         font-size: 1.875em;
       }
 
     }
 
     .currently-playing {
-      display: table-row;
-      width: 100%;
+      //display: table-row;
+      //width: 100%;
       text-align: center;
-      position: relative;
+      //position: relative;
 
       .song-name, .artist-name {
         text-align: center;
-        margin: 0;
-        position: relative;
-        width: 100%;
+        //margin: 0;
+        //position: relative;
+        //width: 100%;
         font-size: 1.1em;
         font-weight: 300;
       }
       .song-name {
-        bottom: 0px;
+        //bottom: 0px;
       }
       .artist-name {
-        bottom: -5px;
+        //bottom: -5px;
       }
     }
 
@@ -86,7 +85,7 @@
     }
 
     .volume {
-      visibility: hidden;
+      //visibility: hidden;
       display: inline-block;
 
       i {
@@ -167,7 +166,7 @@
   }
 }
 
-@media only screen and (min-width: 1024px) {
+@media only screen and (min-width: 768px) {
   .player-bar {
     position: fixed;
     bottom: 0;
@@ -199,8 +198,9 @@
     }
 
     .right-controls {
-      width: 25%;
+     width: 25%;
       text-align: right;
+      vertical-align: middle;
     }
 
     .play-controls {

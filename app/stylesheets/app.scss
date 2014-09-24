@@ -17,7 +17,7 @@ body {
   color: $textColor;
   min-height: 100%;
   @include radial-gradient(#2B1339, #380c77);
-  padding-bottom: 0;
+  padding-bottom: 160px;
 }
 
 .player-header-nav {
@@ -27,35 +27,59 @@ body {
 
     li {
       text-align: center;
+
+      a {
+        font-size: 1.2em;
+        color: white;
+
+        &:active {
+          background-color: white;
+          color: $headerColor;
+          font-weight: bold;
+
+        }
+      }
     }
+
   }
 }
 
 .navbar-default {
   border: none;
-  height: 100px;
+
+  .navbar-collapse {
+    border-top: none;
+    box-shadow: none;
+  }
+
+  .navbar-brand {
+    height: auto;
+  }
 }
 
 .navbar-default .navbar-header .navbar-toggle {
   background-color: $headerColor;
   border-color: white;
+  padding: 10px;
+  top: 25px;
+  right: 10px;
 
   &:hover {
     background-color: white;
 
-    .glyphicon-chevron-down {
-      color: $headerColor;
+    .icon-bar {
+      background-color: $headerColor;
     }
   }
 
-  .glyphicon-chevron-down {
-    color: white;
+  .icon-bar {
+    background-color: white;
   }
 
 }
 
-// Styles for screens 1024px and above
-@media only screen and (min-width: 1024px) {
+// Styles for screens 768px and above
+@media only screen and (min-width: 768px) {
 
   body {
     font-family: $font-stack;

@@ -1,30 +1,40 @@
 @media only screen and (max-width: 768px) {
   .hero-content {
-    background: #2f1d57;
-    padding: 20px 0; }
-    .hero-content h1, .hero-content h3 {
-      text-align: center; }
+    background: #b0a9cf;
+    padding: 20px 0;
+    display: table;
+    width: 100%;
+    margin-right: auto;
+    margin-left: auto; }
+    .hero-content h1 {
+      font-size: 4.375em;
+      font-weight: 300;
+      color: rgba(123, 70, 163, 0.9);
+      width: 280px;
+      margin-left: auto;
+      margin-right: auto; }
+    .hero-content h3 {
+      color: rgba(123, 70, 163, 0.9);
+      width: 280px;
+      margin-left: auto;
+      margin-right: auto; }
   .selling-points {
-    padding: 0; }
+    width: 280px;
+    margin-right: auto;
+    margin-left: auto; }
     .selling-points .point {
       width: auto;
-      padding: 3em 0.75em; }
+      padding-bottom: 5px; }
       .selling-points .point h5 {
         font-size: 1.5em;
         font-weight: bold;
-        text-align: center;
         height: 2.25em; }
       .selling-points .point p {
-        font-size: 1.25em;
-        text-align: center; }
-  footer {
-    background-color: rgba(123, 70, 163, 0.9);
-    height: 50px;
-    margin-top: 10px; } }
+        font-size: 1.25em; } }
 
-@media only screen and (min-width: 1024px) {
+@media only screen and (min-width: 768px) {
   .hero-content {
-    background: #2f1d57;
+    background: #b0a9cf;
     padding: 100px 0; }
     .hero-content h1 {
       font-size: 70px;
@@ -39,7 +49,6 @@
         font-size: 24px;
         font-weight: bold;
         margin-bottom: 20px;
-        text-align: center;
         height: 85px; }
       .selling-points .point p {
         font-size: 14px;
@@ -95,11 +104,9 @@
   td.song-number {
     padding: 0;
     height: 70px;
-    text-align: center; }
-  footer {
-    visibility: hidden; } }
+    text-align: center; } }
 
-@media only screen and (min-width: 1024px) {
+@media only screen and (min-width: 768px) {
   .album-header-container {
     margin-top: 55px;
     margin-bottom: 40px; }
@@ -200,7 +207,7 @@
       .collection-album-container .collection-overlay-button .fa-play {
         padding-left: 5px; } }
 
-@media only screen and (min-width: 1024px) {
+@media only screen and (min-width: 768px) {
   .collection-album-container {
     margin-top: 30px;
     margin-bottom: 20px; }
@@ -266,39 +273,23 @@
     .player-bar a:disabled {
       color: pink; }
     .player-bar .container {
-      display: table;
       padding: 0;
       min-height: 100%; }
     .player-bar .left-controls {
-      display: table-row;
-      width: 100%;
       text-align: center; }
-    .player-bar .right-controls {
-      visibility: hidden; }
     .player-bar .play-controls a {
-      font-size: 1.5em;
-      vertical-align: middle; }
+      font-size: 1.5em; }
     .player-bar .play-controls .previous {
-      margin-right: 65px; }
+      margin-right: 45px; }
     .player-bar .play-controls .play-pause {
-      margin-right: 60px;
+      margin-right: 45px;
       font-size: 1.875em; }
     .player-bar .currently-playing {
-      display: table-row;
-      width: 100%;
-      text-align: center;
-      position: relative; }
+      text-align: center; }
       .player-bar .currently-playing .song-name, .player-bar .currently-playing .artist-name {
         text-align: center;
-        margin: 0;
-        position: relative;
-        width: 100%;
         font-size: 1.1em;
         font-weight: 300; }
-      .player-bar .currently-playing .song-name {
-        bottom: 0px; }
-      .player-bar .currently-playing .artist-name {
-        bottom: -5px; }
     .player-bar .queue-toggle {
       visibility: hidden;
       display: inline-block;
@@ -306,7 +297,6 @@
       .player-bar .queue-toggle i {
         font-size: 20px; }
     .player-bar .volume {
-      visibility: hidden;
       display: inline-block; }
       .player-bar .volume i {
         width: 20px;
@@ -360,7 +350,7 @@
       margin-top: -10px;
       margin-left: -10px; } }
 
-@media only screen and (min-width: 1024px) {
+@media only screen and (min-width: 768px) {
   .player-bar {
     position: fixed;
     bottom: 0;
@@ -384,7 +374,8 @@
       text-align: left; }
     .player-bar .right-controls {
       width: 25%;
-      text-align: right; }
+      text-align: right;
+      vertical-align: middle; }
     .player-bar .play-controls a {
       font-size: 20px;
       vertical-align: middle; }
@@ -550,28 +541,42 @@ body {
   min-height: 100%;
   background: -webkit-radial-gradient(#2b1339, #380c77);
   background: radial-gradient(#2b1339, #380c77);
-  padding-bottom: 0; }
+  padding-bottom: 160px; }
 
 .player-header-nav {
   background-color: rgba(123, 70, 163, 0.9); }
   .player-header-nav .navbar-nav li {
     text-align: center; }
+    .player-header-nav .navbar-nav li a {
+      font-size: 1.2em;
+      color: white; }
+      .player-header-nav .navbar-nav li a:active {
+        background-color: white;
+        color: rgba(123, 70, 163, 0.9);
+        font-weight: bold; }
 
 .navbar-default {
-  border: none;
-  height: 100px; }
+  border: none; }
+  .navbar-default .navbar-collapse {
+    border-top: none;
+    box-shadow: none; }
+  .navbar-default .navbar-brand {
+    height: auto; }
 
 .navbar-default .navbar-header .navbar-toggle {
   background-color: rgba(123, 70, 163, 0.9);
-  border-color: white; }
+  border-color: white;
+  padding: 10px;
+  top: 25px;
+  right: 10px; }
   .navbar-default .navbar-header .navbar-toggle:hover {
     background-color: white; }
-    .navbar-default .navbar-header .navbar-toggle:hover .glyphicon-chevron-down {
-      color: rgba(123, 70, 163, 0.9); }
-  .navbar-default .navbar-header .navbar-toggle .glyphicon-chevron-down {
-    color: white; }
+    .navbar-default .navbar-header .navbar-toggle:hover .icon-bar {
+      background-color: rgba(123, 70, 163, 0.9); }
+  .navbar-default .navbar-header .navbar-toggle .icon-bar {
+    background-color: white; }
 
-@media only screen and (min-width: 1024px) {
+@media only screen and (min-width: 768px) {
   body {
     font-family: 'Open Sans';
     color: white;

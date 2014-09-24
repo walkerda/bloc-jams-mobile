@@ -1,46 +1,55 @@
 @import "variables";
 
 @media only screen and (max-width: 768px) {
+
   .hero-content {
     background: $heroContent;
     padding: 20px 0;
+    display: table;
+    width: 100%;
+    margin-right: auto;
+    margin-left: auto;
+    //text-align: center;
 
-    h1, h3 {
-      text-align: center;
+    h1 {
+      font-size: 4.375em;
+      font-weight: 300;
+      color: $headerColor;
+      width: 280px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    h3 {
+      color: $headerColor;
+      width: 280px;
+      margin-left: auto;
+      margin-right: auto;
     }
   }
 
   .selling-points {
-    padding: 0;
-//    margin-bottom: 10px;
+    width: 280px;
+    margin-right: auto;
+    margin-left: auto;
 
     .point {
       width: auto;
-      padding: 3em 0.75em;
+      padding-bottom: 5px;
 
       h5 {
         font-size: 1.5em;
         font-weight: bold;
-//        margin-bottom: 20px;
-        text-align: center;
         height: 2.25em;
       }
 
       p {
         font-size: 1.25em;
-        text-align: center;
       }
     }
   }
-
-  footer {
-    background-color: $headerColor;
-    height: 50px;
-    margin-top: 10px;
-  }
 }
 
-@media only screen and (min-width: 1024px) {
+@media only screen and (min-width: 768px) {
 
   .hero-content {
     background: $heroContent;
@@ -64,7 +73,7 @@
         font-size: 24px;
         font-weight: bold;
         margin-bottom: 20px;
-        text-align: center;
+        //text-align: center;
         height: 85px;
       }
 
