@@ -9,8 +9,8 @@
     <link rel="stylesheet" type="text/css" href="/stylesheets/app.css">
     <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,800,600,700,300" rel='stylesheet' type='text/css'>
     <link href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
     <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.15/angular.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.10/angular-ui-router.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/buzz/1.1.0/buzz.min.js"></script>
@@ -28,7 +28,9 @@
                 <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
                         data-target=".nav-collapse">
                     <span class="sr-only">Toggle navigation</span>
-                    <span class="glyphicon glyphicon-chevron-down"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
                 </button>
                 <a ui-sref="landing" class="navbar-brand">
                     <img src="/images/blocjams.png" class="img-responsive">
@@ -37,10 +39,10 @@
         </div>
         <div class="navbar-collapse collapse nav-collapse" >
             <ul class="nav navbar-nav navbar-right">
-                <li><a ui-sref="landing">Home</a></li>
-                <li><a ui-sref="collection">Library</a></li>
-                <li><a ui-sref="song">Song</a></li>
-                <li><a ui-sref="album">Album</a></li>
+                <li><a ui-sref="landing" data-toggle="collapse" data-target=".nav-collapse">Home</a></li>
+                <li><a ui-sref="collection" data-toggle="collapse" data-target=".nav-collapse">Library</a></li>
+                <li><a ui-sref="song" data-toggle="collapse" data-target=".nav-collapse">Song</a></li>
+                <li><a ui-sref="album" data-toggle="collapse" data-target=".nav-collapse">Album</a></li>
             </ul>
         </div>
     </nav>
@@ -48,7 +50,6 @@
     <!-- Render templates here -->
     <div ui-view></div>
 
-    <footer></footer>
 
 </body>
 </html>
