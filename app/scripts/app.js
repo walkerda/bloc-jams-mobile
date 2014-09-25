@@ -76,6 +76,9 @@ blocJams.controller('Landing.controller', ['$scope', function($scope) {
         '/images/album-placeholders/album-8.jpg',
         '/images/album-placeholders/album-9.jpg'
     ];
+
+    $scope.backAlbumName = albumPicasso.name;
+    $scope.backAlbumArtist = albumPicasso.artist;
 }]);
 
 blocJams.controller('Collection.controller', ['$scope', 'SongPlayer', function($scope, SongPlayer) {

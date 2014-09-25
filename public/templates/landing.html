@@ -1,8 +1,8 @@
 
 <div class='hero-content'><!-- Hero Content -->
     <div class="container">
-        <h1 ng-click="headingTextClicked()">{{ headingText }}</h1>
-        <h3 ng-click="subTextClicked()">{{ subText }}</h3>
+        <h1 class="fadeIn" ng-click="headingTextClicked()">{{ headingText }}</h1>
+        <h3 class="slideRight" ng-click="subTextClicked()">{{ subText }}</h3>
     </div>
 </div>
 
@@ -26,8 +26,19 @@
 
     <div class="landing-album-list container">
         <div class="row">
-            <div class="col-md-4" ng-repeat="albumURL in albumURLs">
-                <img ng-src="{{ albumURL }}" class="img-responsive"/>
+            <!--<div class="col-md-4" ng-repeat="albumURL in albumURLs">-->
+                <!--<img ng-src="{{ albumURL }}" class="img-responsive"/>-->
+            <!--</div>-->
+            <div class="col-md-4 card-container" ng-repeat="albumURL in albumURLs">
+                <div class="card">
+                    <div class="side" >
+                        <img ng-src="{{ albumURL }}"/>
+                    </div>
+                    <div class="side back">
+                        <h3>{{ backAlbumName }}</h3>
+                        <h4>{{ backAlbumArtist }}</h4>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
