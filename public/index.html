@@ -22,7 +22,25 @@
 
 <body>
 
-    <nav class='player-header-nav navbar navbar-default' role="navigation">
+    <nav class='player-header-nav navbar navbar-default large-screens' role="navigation">
+        <div class="container-fluid">
+            <div class="navbar-header"><!-- Nav Bar -->
+                <a ui-sref="landing" class="navbar-brand">
+                    <img src="/images/blocjams.png" class="img-responsive">
+                </a>
+            </div>
+        </div>
+        <div class="navbar-collapse collapse nav-collapse" >
+            <ul class="nav navbar-nav navbar-right">
+                <li><a ui-sref="landing">Home</a></li>
+                <li><a ui-sref="collection">Library</a></li>
+                <li><a ui-sref="song">Song</a></li>
+                <li><a ui-sref="album">Album</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <nav class='player-header-nav navbar navbar-default small-screens' role="navigation">
         <div class="container-fluid">
             <div class="navbar-header"><!-- Nav Bar -->
                 <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"

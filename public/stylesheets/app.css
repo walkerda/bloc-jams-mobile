@@ -1163,7 +1163,7 @@ stretchRight
     position: relative;
     left: calc(50% - 200px); }
   .landing-album-list .card-container .card h3, .landing-album-list .card-container .card h4 {
-    visibility: hidden; } }
+    display: none; } }
 
 @media only screen and (min-width: 768px) {
   .hero-content {
@@ -1173,28 +1173,30 @@ stretchRight
       font-size: 70px;
       margin-bottom: 50px;
       font-weight: 300; }
-  .selling-points {
-    padding: 100px 0; }
-    .selling-points .point {
-      width: 32%;
-      padding: 0 0.5%; }
-      .selling-points .point h5 {
-        font-size: 24px;
-        font-weight: bold;
-        margin-bottom: 20px;
-        text-align: center;
-        height: 85px; }
-      .selling-points .point p {
-        font-size: 14px;
-        text-align: center; }
+  .selling-points .point {
+    width: 32%;
+    padding: 0 0.5%; }
+    .selling-points .point h5 {
+      font-size: 24px;
+      font-weight: bold;
+      margin-bottom: 20px;
+      text-align: center;
+      height: 85px; }
+    .selling-points .point p {
+      font-size: 14px;
+      text-align: center; }
   .landing-album-list {
     height: auto;
     width: auto; }
+    .landing-album-list img {
+      height: 100%;
+      width: 100%;
+      margin-top: 50px; }
     .landing-album-list .card-container {
-      height: 400px;
+      height: 390px;
       perspective: 600;
       position: relative;
-      width: 400px; }
+      margin-top: 0; }
       .landing-album-list .card-container .card {
         height: 100%;
         position: absolute;
@@ -1211,7 +1213,8 @@ stretchRight
         .landing-album-list .card-container .card .back {
           background-color: rgba(123, 70, 163, 0.9);
           text-align: center;
-          transform: rotateY(180deg); }
+          transform: rotateY(180deg);
+          margin-top: 50px; }
         .landing-album-list .card-container .card h3 {
           color: rgba(255, 255, 255, 0.6);
           font-size: 3em;
@@ -1695,49 +1698,48 @@ stretchRight
     background-color: #b3b3b3;
     cursor: not-allowed; }
 
-html {
-  height: 100%; }
-
-body {
-  font-family: 'Open Sans';
-  color: white;
-  min-height: 100%;
-  background: -webkit-radial-gradient(#2b1339, #380c77);
-  background: radial-gradient(#2b1339, #380c77);
-  padding-bottom: 160px; }
-
-.player-header-nav {
-  background-color: rgba(123, 70, 163, 0.9); }
-  .player-header-nav .navbar-nav li {
-    text-align: center; }
-    .player-header-nav .navbar-nav li a {
-      font-size: 1.2em;
-      color: white; }
-      .player-header-nav .navbar-nav li a:active {
-        background-color: white;
-        color: rgba(123, 70, 163, 0.9);
-        font-weight: bold; }
-
-.navbar-default {
-  border: none; }
-  .navbar-default .navbar-collapse {
-    border-top: none;
-    box-shadow: none; }
-  .navbar-default .navbar-brand {
-    height: auto; }
-
-.navbar-default .navbar-header .navbar-toggle {
-  background-color: rgba(123, 70, 163, 0.9);
-  border-color: white;
-  padding: 10px;
-  top: 25px;
-  right: 10px; }
-  .navbar-default .navbar-header .navbar-toggle:hover {
-    background-color: white; }
-    .navbar-default .navbar-header .navbar-toggle:hover .icon-bar {
-      background-color: rgba(123, 70, 163, 0.9); }
-  .navbar-default .navbar-header .navbar-toggle .icon-bar {
-    background-color: white; }
+@media only screen and (max-width: 768px) {
+  html {
+    height: 100%; }
+  body {
+    font-family: 'Open Sans';
+    color: white;
+    min-height: 100%;
+    background: -webkit-radial-gradient(#2b1339, #380c77);
+    background: radial-gradient(#2b1339, #380c77);
+    padding-bottom: 160px; }
+  .large-screens {
+    display: none; }
+  .player-header-nav {
+    background-color: rgba(123, 70, 163, 0.9); }
+    .player-header-nav .navbar-nav li {
+      text-align: center; }
+      .player-header-nav .navbar-nav li a {
+        font-size: 1.2em;
+        color: white; }
+        .player-header-nav .navbar-nav li a:active {
+          background-color: white;
+          color: rgba(123, 70, 163, 0.9);
+          font-weight: bold; }
+  .navbar-default {
+    border: none; }
+    .navbar-default .navbar-collapse {
+      border-top: none;
+      box-shadow: none; }
+    .navbar-default .navbar-brand {
+      height: auto; }
+  .navbar-default .navbar-header .navbar-toggle {
+    background-color: rgba(123, 70, 163, 0.9);
+    border-color: white;
+    padding: 10px;
+    top: 25px;
+    right: 10px; }
+    .navbar-default .navbar-header .navbar-toggle:hover {
+      background-color: white; }
+      .navbar-default .navbar-header .navbar-toggle:hover .icon-bar {
+        background-color: rgba(123, 70, 163, 0.9); }
+    .navbar-default .navbar-header .navbar-toggle .icon-bar {
+      background-color: white; } }
 
 @media only screen and (min-width: 768px) {
   body {
@@ -1752,6 +1754,8 @@ body {
     padding-bottom: 0; }
   body.landing .navbar {
     margin-bottom: 10px; }
+  .small-screens {
+    display: none; }
   .player-header-nav {
     background-color: rgba(123, 70, 163, 0.9); }
   .navbar-default {

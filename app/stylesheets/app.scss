@@ -6,77 +6,83 @@
 @import "buttons";
 @import "variables";
 
+@media only screen and (max-width: 768px) {
+  html {
+    height: 100%;
+  }
 
-// Global and mobile first styles
-html {
-  height: 100%;
-}
+  body {
+    font-family: $font-stack;
+    color: $textColor;
+    min-height: 100%;
+    @include radial-gradient(#2B1339, #380c77);
+    padding-bottom: 160px;
+  }
 
-body {
-  font-family: $font-stack;
-  color: $textColor;
-  min-height: 100%;
-  @include radial-gradient(#2B1339, #380c77);
-  padding-bottom: 160px;
-}
+  .large-screens {
+    display: none;
+  }
 
-.player-header-nav {
-  background-color: $headerColor;
+  .player-header-nav {
+    background-color: $headerColor;
 
-  .navbar-nav {
+    .navbar-nav {
 
-    li {
-      text-align: center;
+      li {
+        text-align: center;
 
-      a {
-        font-size: 1.2em;
-        color: white;
+        a {
+          font-size: 1.2em;
+          color: white;
 
-        &:active {
-          background-color: white;
-          color: $headerColor;
-          font-weight: bold;
+          &:active {
+            background-color: white;
+            color: $headerColor;
+            font-weight: bold;
 
+          }
         }
+      }
+
+    }
+  }
+
+  .navbar-default {
+    border: none;
+
+    .navbar-collapse {
+      border-top: none;
+      box-shadow: none;
+    }
+
+    .navbar-brand {
+      height: auto;
+    }
+  }
+
+  .navbar-default .navbar-header .navbar-toggle {
+    background-color: $headerColor;
+    border-color: white;
+    padding: 10px;
+    top: 25px;
+    right: 10px;
+
+    &:hover {
+      background-color: white;
+
+      .icon-bar {
+        background-color: $headerColor;
       }
     }
 
-  }
-}
-
-.navbar-default {
-  border: none;
-
-  .navbar-collapse {
-    border-top: none;
-    box-shadow: none;
-  }
-
-  .navbar-brand {
-    height: auto;
-  }
-}
-
-.navbar-default .navbar-header .navbar-toggle {
-  background-color: $headerColor;
-  border-color: white;
-  padding: 10px;
-  top: 25px;
-  right: 10px;
-
-  &:hover {
-    background-color: white;
-
     .icon-bar {
-      background-color: $headerColor;
+      background-color: white;
     }
-  }
 
-  .icon-bar {
-    background-color: white;
   }
-
 }
+
+
 
 // Styles for screens 768px and above
 @media only screen and (min-width: 768px) {
@@ -96,6 +102,10 @@ body {
 
   body.landing .navbar {
     margin-bottom: 10px;
+  }
+
+  .small-screens {
+    display: none;
   }
 
   .player-header-nav {

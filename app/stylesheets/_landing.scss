@@ -60,7 +60,7 @@
         }
 
         h3, h4 {
-          visibility: hidden;
+          display: none;
         }
       }
     }
@@ -83,7 +83,6 @@
   }
 
   .selling-points {
-    padding: 100px 0;
 
     .point {
       width: 32%;
@@ -108,11 +107,18 @@
     height: auto;
     width: auto;
 
+
+    img {
+      height: 100%;
+      width: 100%;
+      margin-top: 50px;
+    }
+
     .card-container {
-      height: 400px;
+      height: 390px;
       perspective: 600;
       position: relative;
-      width: 400px;
+      margin-top: 0;
 
       .card {
         height: 100%;
@@ -136,6 +142,7 @@
           background-color: $headerColor;
           text-align: center;
           transform: rotateY(180deg);
+          margin-top: 50px;
         }
 
         h3 {
