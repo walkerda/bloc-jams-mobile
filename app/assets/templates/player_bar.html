@@ -11,7 +11,7 @@
                     class='next' ng-click="songPlayer.next()" ng-disabled="!songPlayer.playing"> <i
                     class='fa fa-forward'></i> </a></div>
             <div class='currently-playing player-bar-control-group col-md-4'><h2 class='song-name'>{{
-                                                                                                   songPlayer.currentSong.name
+                                                                                                   songPlayer.currentSong.name || "-"
                                                                                                    }}</h2>
 
                 <div class='seek-control'>
